@@ -97,7 +97,7 @@ class SizeRange {
 
     if (this.config.value !== undefined) {
       switch (this.config.operator) {
-      case "=":  return size != this.config.value;
+      case "=":  return size == this.config.value;
       case ">":  return size >  this.config.value;
       case ">=": return size >= this.config.value;
       case "<":  return size <  this.config.value;
