@@ -19,7 +19,7 @@ regexes.comparison = /^(?<operator>\b(?:min|max|equal)\b|=|<=?|>=?)?\s*(?<value>
 
 function parseSize(text) {
 
-  const match = text.trim().match(/^(?<value>[\d.]+)\s*(?<unit>.+?)?$/);
+  const match = text.toString().trim().match(/^(?<value>[\d.]+)\s*(?<unit>.+?)?$/);
 
   if (!match)
     return null;
@@ -41,11 +41,9 @@ function parseSize(text) {
 
 function parseRange(text) {
 
-  text = text.trim();
+  text = text.toString().trim();
 
   for (const regex of Object.values(regexes)) {
-
-    console.log(regex);
 
     const match = text.match(regex);
 
@@ -61,7 +59,7 @@ function parseRange(text) {
 
       result[name] = exports.parseSize(result[name]);
 
-      if (!result[name])
+      if (result[name] === null)
         return null;
     }
 

@@ -1,6 +1,6 @@
 {
   "name": "size-range",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SizeRange is a simple library to parse and validate size ranges.",
   "main": "index.js",
   "author": "Cédric Tailly",
